@@ -111,15 +111,15 @@ def main(argv):
 	{
 		"unmute-keepup-warnings": False,
 		"verbose": True,
-		"dir": "./wrap",
-		"server-dir": "./",
+		"dir": os.path.join(".", "wrap"),
+		"server-dir": ".",
 		"server-options": "-Xmx1024M -Xms1024M",
 		"dont-remove-ops": False,
 	})
 	options, args = opts.check(argv)
 
 	if not os.path.exists(os.path.join(options["server-dir"], "minecraft_server.jar")):
-		print("Could not find minecraft-server.jar, perhaps you have the wrong server-dir?")
+		print("Could not find minecraft_server.jar, perhaps you have the wrong server-dir?")
 		return 1
 	
 	if not os.path.exists(options["dir"]):
